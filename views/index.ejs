@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Interface Animation - Music Player</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- PRESS THE MENU BUTTON TO TRIGGER ANIMATION -->
+<!-- PRESS PLAY BUTTON TO LISTEN THE DEMO SONG -->
+
+<!-- As seen on: "https://dribbble.com/shots/2144866-Day-5-Music-Player-Rebound/" -->
+
+<!-- THANK YOU! -->
+<form action="/" method="post">
+	<input type="button" value="13" name="newtest" id="newtest" onClick="this.form.submit()">
+	
+</form>
+<article class="screen">
+  <input type="checkbox" value="None" id="magicButton" name="check" />
+  <label class="main" for="magicButton"></label>
+
+  <div class="coverImage"></div>
+  <div class="search"></div>
+  <div class="bodyPlayer">
+	
+  </div>
+  <table class="list" id="list">
+
+	<!-- first ejs for each song list -->
+	<!-- put form for each table row to get values of the song clicked -->
+	
+		<%for (let songListNo = 0; songListNo < songDir.length; songListNo++) {%>
+			<form action="/" method="post" name="songForm">
+				
+	
+			<tr class="song" value="<%=metadataArray[songListNo]%>">
+				<input type="button" value="<%=songListNo%>" name="songclicked" onclick="this.form.submit()">
+
+				<td class="nr">
+				  <h5><%=songListNo +1%><h5></td>
+								  <td class="title"><h6><%=metadataArray[songListNo].TIT2%><h6></td>
+								  <td class="length"><h5>3:54<h5></td>
+								  <td><input type="checkbox" id="heart"/><label class="zmr" for="heart"></label></td>
+							  </tr>
+							
+							</form>
+		<%}%>
+		
+  
+	
+				<!-- first ejs ends here, other song rows below should be removed -->
+					
+				</table>
+  
+				
+				<div class="shadow"></div>
+				
+				<div class="bar"></div>
+				<!-- song info  -->
+				<div class="info">
+					<h4><%=audioClicked.TIT2%></h4>
+					<h3><%=audioClicked.TPE1%></h3>
+				</div>
+<audio preload="auto" id="audio" controls>
+	<!-- source should change based on which song is clicked to play -->
+  <source src="http://www.jplayer.org/audio/mp3/Miaow-02-Hidden.mp3">
+  <source src="http://www.jplayer.org/audio/mp3/Miaow-02-Hidden.ogg">
+	</audio>
+				<table class="player">
+					<td><input type="checkbox" id="backward"/><label class="backward" for="backward"></label></td>
+					<td><input type="checkbox" id="play" title="Play" onclick="togglePlayPause()"/><label class="play" for="play"></label></td>
+					<td><input type="checkbox" id="forward"/><label class="forward" for="forward"></label></td>
+				</table>
+				
+				<table class="footer">
+					<td><input type="checkbox" id="love" checked /><label class="love" for="love"></label></td>
+					<td><input type="checkbox" id="shuffle"/><label class="shuffle" for="shuffle"></label></td>
+					<td><input type="checkbox" id="repeat" checked /><label class="repeat" for="repeat"></label></td>
+					<td><input type="checkbox" id="options"/><label class="options" for="options"></label></td>
+				</table>
+				<!-- another ejs based on the first -->
+				<div class="current"><h2>STRESSED OUT</h2></div>
+				<!-- ends here -->
+			
+		</article>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

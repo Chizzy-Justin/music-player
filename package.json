@@ -1,0 +1,26 @@
+{
+  "name": "accstro-music-player",
+  "version": "1.0.0",
+  "description": "music player to play music and show nodejs and mongodb skill",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Accstro",
+    "Music",
+    "songs"
+  ],
+  "author": "Chizzy Justin",
+  "license": "ISC",
+  "dependencies": {
+    "audic": "^3.0.1",
+    "audio-metadata": "^0.3.0",
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.1",
+    "music-metadata": "^8.1.4",
+    "util": "^0.12.5"
+  }
+}
